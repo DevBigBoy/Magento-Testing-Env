@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!-- File: app/code/Shezo/AnimalLovers/etc/db_schema.xml -->
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="shezo_customer_pet_preferences" resource="default" engine="innodb" comment="Customer Pet Preferences">
+        <!-- Primary Key Column -->
+        <column xsi:type="int" name="entity_id" padding="10" unsigned="true" nullable="false" identity="true" comment="Entity ID" />
+
+        <!-- Foreign Key Column -->
+        <column xsi:type="int" name="customer_id" padding="10" unsigned="true" nullable="false" comment="Customer ID" />
+
+        <!-- Additional Columns -->
+        <column xsi:type="smallint" name="is_dog_lover" nullable="false" default="0" comment="Is Dog Lover" />
+        <column xsi:type="smallint" name="is_cat_lover" nullable="false" default="0" comment="Is Cat Lover" />
+
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="entity_id"/>
+        </constraint>
+
+        <!-- Foreign Key Constraint -->
+        <constraint xsi:type="foreign" referenceId="FK_SHEZO_CUSTOMER_PREFS_CUSTOMER_ID" table="shezo_customer_pet_preferences" column="customer_id"
+                    referenceTable="customer_entity" referenceColumn="entity_id" onDelete="CASCADE"/>
+
+        <index referenceId="IDX_SHEZO_CUSTOMER_PREFS_CUSTOMER_ID">
+            <column name="customer_id"/>
+        </index>
+    </table>
+</schema>
