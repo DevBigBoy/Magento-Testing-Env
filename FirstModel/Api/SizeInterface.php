@@ -2,8 +2,9 @@
 
 namespace Shezo\FirstModel\Api;
 
-interface Size
+
+interface SizeInterface
 {
-    public function getSize();
+    public function getSize(): string;
 
 }

@@ -2,6 +2,21 @@
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
 
-    <preference for="Shezo\FirstModel\NotMagento\PencilInterface"
-                type="Shezo\FirstModel\NotMagento\YellowPencil"/>
+    <preference for="Shezo\FirstModel\Api\PencilInterface"
+                type="Shezo\FirstModel\Model\Pencil"/>
+    <preference for="Shezo\FirstModel\Api\ColorInterface"
+                type="Shezo\FirstModel\Model\Colors\Red"/>
+    <preference for="Shezo\FirstModel\Api\SizeInterface"
+                type="Shezo\FirstModel\Model\Sizes\Big"/>
+
+
+<!--    <preference for="Magento\Catalog\Api\ProductRepositoryInterface"-->
+<!--                type="Shezo\FirstModel\Model\CustomImplementation"/>-->
+
+    <type name="Shezo\FirstModel\Model\Pencil">
+        <arguments>
+            <argument name="color" xsi:type="object">Shezo\FirstModel\Model\Colors\Yellow</argument>
+            <argument name="size" xsi:type="object">Shezo\FirstModel\Model\Sizes\Small</argument>
+        </arguments>
+    </type>
 </config>

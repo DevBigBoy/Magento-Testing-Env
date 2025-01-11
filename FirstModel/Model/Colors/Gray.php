@@ -1,6 +1,6 @@
 <?php
 
-namespace Shezo\FirstModel\Model;
+namespace Shezo\FirstModel\Model\Colors;
 
 use Shezo\FirstModel\Api\ColorInterface;
 

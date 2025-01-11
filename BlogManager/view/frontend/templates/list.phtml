@@ -1,0 +1,29 @@
+<table>
+    <tr>
+        <th>
+            <?= __("Id")?>
+        </th>
+        <th>
+            <?= __("Title")?>
+        </th>
+        <th>
+            <?= __("Content")?>
+        </th>
+    </tr>
+    <?php
+    $blogs = $block->getBlogs();
+
+    foreach ($blogs as $blog) {?>
+        <tr>
+            <td>
+                <?= $escaper->escapeHtml($blog->getId())?>
+            </td>
+            <td>
+                <?= $escaper->escapeHtml($blog->getTitle())?>
+            </td>
+            <td>
+                <?= substr($escaper->escapeHtml($blog->getContent()), 0, 20).'...'?>
+            </td>
+        </tr>
+    <?php } ?>
+</table>

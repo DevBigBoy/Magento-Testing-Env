@@ -2,6 +2,8 @@
 
 namespace Shezo\FirstModel\NotMagento;
 
+use Shezo\FirstModel\Api\PencilInterface;
+
 class YellowPencil implements PencilInterface
 {
 

@@ -4,6 +4,6 @@ use Magento\Framework\Component\ComponentRegistrar;
 
 ComponentRegistrar::register(
     ComponentRegistrar::MODULE,
-    'Shezo_JobManager',
+    'Shezo_GiftCard',
     __DIR__
 );

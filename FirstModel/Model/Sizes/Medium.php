@@ -1,6 +1,6 @@
 <?php
 
-namespace Shezo\FirstModel\Model;
+namespace Shezo\FirstModel\Model\Sizes;
 
 use Shezo\FirstModel\Api\SizeInterface;
 

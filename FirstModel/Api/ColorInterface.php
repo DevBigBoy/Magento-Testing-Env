@@ -2,7 +2,7 @@
 
 namespace Shezo\FirstModel\Api;
 
-interface Color
+interface ColorInterface
 {
-    public function getColor();
+    public function getColor(): string;
 }

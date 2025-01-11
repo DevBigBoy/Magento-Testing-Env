@@ -6,9 +6,8 @@ namespace Shezo\FirstModel\Model;
 
 use Shezo\FirstModel\Api\ColorInterface;
 use Shezo\FirstModel\Api\SizeInterface;
-use Shezo\FirstModel\Api\PencilInterface;
 
-class Pencil implements PencilInterface
+class Book
 {
 
     public function __construct(
@@ -16,8 +15,4 @@ class Pencil implements PencilInterface
        protected SizeInterface $size
     )
     {}
-    public function getPencilType(): string
-    {
-        return 'Our Pencil Has '.$this->color->getColor() .' Color and its Size ' .  $this->size->getSize();
-    }
 }
