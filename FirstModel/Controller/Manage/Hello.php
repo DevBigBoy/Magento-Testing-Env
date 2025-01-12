@@ -13,6 +13,7 @@ use Shezo\FirstModel\Api\PencilInterface;
 use Magento\Catalog\Api\ProductRepositoryInterface;
 use Shezo\FirstModel\Model\Book;
 use Shezo\FirstModel\Model\Pencil;
+use Shezo\FirstModel\Model\Student;
 
 class Hello extends Action  implements HttpGetActionInterface, HttpPostActionInterface
 {
@@ -37,12 +38,17 @@ class Hello extends Action  implements HttpGetActionInterface, HttpPostActionInt
         $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
         $pencil = $objectManager->create(Pencil::class);
         $book = $objectManager->create(Book::class);
+        $student = $objectManager->create(Student::class);
         echo '<pre>';
         var_dump($pencil);
         echo '</pre>';
 
         echo '<pre>';
         var_dump($book);
+        echo '</pre>';
+
+        echo '<pre>';
+        var_dump($student);
         echo '</pre>';
     }
 }

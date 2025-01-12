@@ -1,0 +1,102 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <!-- Repository Interface Preferences -->
+    <preference for="Shezo\JobManager\Api\DepartmentRepositoryInterface"
+                type="Shezo\JobManager\Service\DepartmentRepository"/>
+    <preference for="Shezo\JobManager\Api\JobRepositoryInterface"
+                type="Shezo\JobManager\Service\JobRepository"/>
+
+    <!-- Data Interface Preferences -->
+    <preference for="Shezo\JobManager\Api\Data\DepartmentInterface"
+                type="Shezo\JobManager\Model\Department"/>
+    <preference for="Shezo\JobManager\Api\Data\JobInterface"
+                type="Shezo\JobManager\Model\Job"/>
+
+<!--    <preference for="Shezo\JobManager\Api\DepartmentSearchResultsInterface"-->
+<!--                type="Magento\Framework\Api\SearchResults"/>-->
+<!--    <preference for="Shezo\JobManager\Api\JobSearchResultsInterface"-->
+<!--                type="Magento\Framework\Api\SearchResults"/>-->
+
+    <!-- Collection Processor Configuration -->
+<!--    <type name="Shezo\JobManager\Service\DepartmentRepository">-->
+<!--        <arguments>-->
+<!--            <argument name="collectionProcessor" xsi:type="object">-->
+<!--                Magento\Framework\Api\SearchCriteria\CollectionProcessor-->
+<!--            </argument>-->
+<!--        </arguments>-->
+<!--    </type>-->
+
+<!--    <type name="Shezo\JobManager\Service\JobRepository">-->
+<!--        <arguments>-->
+<!--            <argument name="collectionProcessor" xsi:type="object">-->
+<!--                Magento\Framework\Api\SearchCriteria\CollectionProcessor-->
+<!--            </argument>-->
+<!--        </arguments>-->
+<!--    </type>-->
+
+    <!-- Collection Processor Components -->
+<!--    <virtualType name="Shezo\JobManager\Model\Api\SearchCriteria\DepartmentCollectionProcessor"-->
+<!--                 type="Magento\Framework\Api\SearchCriteria\CollectionProcessor">-->
+<!--        <arguments>-->
+<!--            <argument name="processors" xsi:type="array">-->
+<!--                <item name="filters" xsi:type="object">-->
+<!--                    Magento\Framework\Api\SearchCriteria\CollectionProcessor\FilterProcessor-->
+<!--                </item>-->
+<!--                <item name="sorting" xsi:type="object">-->
+<!--                    Magento\Framework\Api\SearchCriteria\CollectionProcessor\SortingProcessor-->
+<!--                </item>-->
+<!--                <item name="pagination" xsi:type="object">-->
+<!--                    Magento\Framework\Api\SearchCriteria\CollectionProcessor\PaginationProcessor-->
+<!--                </item>-->
+<!--            </argument>-->
+<!--        </arguments>-->
+<!--    </virtualType>-->
+
+<!--    <virtualType name="Shezo\JobManager\Model\Api\SearchCriteria\JobCollectionProcessor"-->
+<!--                 type="Magento\Framework\Api\SearchCriteria\CollectionProcessor">-->
+<!--        <arguments>-->
+<!--            <argument name="processors" xsi:type="array">-->
+<!--                <item name="filters" xsi:type="object">-->
+<!--                    Magento\Framework\Api\SearchCriteria\CollectionProcessor\FilterProcessor-->
+<!--                </item>-->
+<!--                <item name="sorting" xsi:type="object">-->
+<!--                    Magento\Framework\Api\SearchCriteria\CollectionProcessor\SortingProcessor-->
+<!--                </item>-->
+<!--                <item name="pagination" xsi:type="object">-->
+<!--                    Magento\Framework\Api\SearchCriteria\CollectionProcessor\PaginationProcessor-->
+<!--                </item>-->
+<!--            </argument>-->
+<!--        </arguments>-->
+<!--    </virtualType>-->
+
+    <!-- ACL Rules -->
+<!--    <type name="Magento\Framework\Authorization\Validator\Result">-->
+<!--        <plugin name="shezoJobManagerAclValidator"-->
+<!--                type="Shezo\JobManager\Plugin\Authorization\Validator\ResultPlugin"/>-->
+<!--    </type>-->
+
+    <!-- Logger Configuration -->
+<!--    <type name="Shezo\JobManager\Logger\Handler">-->
+<!--        <arguments>-->
+<!--            <argument name="filesystem" xsi:type="object">Magento\Framework\Filesystem\Driver\File</argument>-->
+<!--        </arguments>-->
+<!--    </type>-->
+<!--    <type name="Shezo\JobManager\Logger\Logger">-->
+<!--        <arguments>-->
+<!--            <argument name="name" xsi:type="string">shezoJobManager</argument>-->
+<!--            <argument name="handlers" xsi:type="array">-->
+<!--                <item name="system" xsi:type="object">Shezo\JobManager\Logger\Handler</item>-->
+<!--            </argument>-->
+<!--        </arguments>-->
+<!--    </type>-->
+
+    <!-- Cache Configuration -->
+<!--    <type name="Magento\Framework\App\Cache\Type\FrontendPool">-->
+<!--        <arguments>-->
+<!--            <argument name="typeFrontendMap" xsi:type="array">-->
+<!--                <item name="shezo_job_manager" xsi:type="string">shezo_job_manager_cache_frontend</item>-->
+<!--            </argument>-->
+<!--        </arguments>-->
+<!--    </type>-->
+</config>

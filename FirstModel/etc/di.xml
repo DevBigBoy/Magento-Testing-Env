@@ -19,4 +19,15 @@
             <argument name="size" xsi:type="object">Shezo\FirstModel\Model\Sizes\Small</argument>
         </arguments>
     </type>
+
+    <type name="Shezo\FirstModel\Model\Student">
+        <arguments>
+            <argument name="firstName" xsi:type="string">Farida</argument>
+            <argument name="age" xsi:type="number">25</argument>
+            <argument name="skills" xsi:type="array">
+                <item name="Reading" xsi:type="number">1</item>
+                <item name="football" xsi:type="number">1</item>
+            </argument>
+        </arguments>
+    </type>
 </config>

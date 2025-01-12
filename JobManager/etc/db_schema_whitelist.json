@@ -1,0 +1,39 @@
+{
+    "shezo_job_manager_department": {
+        "column": {
+            "department_id": true,
+            "name": true,
+            "description": true,
+            "created_at": true,
+            "updated_at": true,
+            "is_active": true
+        },
+        "index": {
+            "SHEZO_JOB_MANAGER_DEPARTMENT_NAME_DESCRIPTION": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    },
+    "shezo_job_manager_job": {
+        "column": {
+            "job_id": true,
+            "title": true,
+            "location": true,
+            "type": true,
+            "description": true,
+            "created_at": true,
+            "updated_at": true,
+            "is_active": true,
+            "department_id": true
+        },
+        "index": {
+            "SHEZO_JOB_MANAGER_JOB_DEPARTMENT_ID": true,
+            "SHEZO_JOB_MANAGER_JOB_TITLE_DESCRIPTION_LOCATION_TYPE": true
+        },
+        "constraint": {
+            "PRIMARY": true,
+            "FK_31F671485F9F54DE2C295EEF86CFC38E": true
+        }
+    }
+}
