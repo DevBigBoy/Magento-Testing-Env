@@ -24,6 +24,11 @@
             <td>
                 <?= substr($escaper->escapeHtml($blog->getContent()), 0, 20).'...'?>
             </td>
+            <td>
+                <a href="<?= $escaper->escapeUrl($block->getUrl('blog/manage/edit', ['id'=>$escaper->escapeHtml($blog->getId())]))?>">
+                    <?= __('Edit') ?>
+                </a>
+            </td>
         </tr>
     <?php } ?>
 </table>
