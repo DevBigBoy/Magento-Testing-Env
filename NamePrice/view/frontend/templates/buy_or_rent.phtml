@@ -1,0 +1,31 @@
+<div class="buy-or-rent-buttons">
+    <button id="buy-button" type="button" class="action primary">
+        Buy this Product
+    </button>
+
+    <button id="rent-button" type="button" class="action secondary">
+        Rent this Product
+    </button>
+</div>
+
+<script type="text/javascript">
+    require(['jquery', 'mage/url'], function ($, url) {
+        // Handle Buy Button
+        $('#buy-button').click(function () {
+            $('#product_addtocart_form').attr('action', url.build('checkout/cart/add'));
+            $('#product_addtocart_form').submit();
+        });
+
+        // Handle Rent Button
+        $('#rent-button').click(function () {
+            $('<input>').attr({
+                type: 'hidden',
+                name: 'rent_mode',
+                value: '1' // Custom value to indicate "Rent"
+            }).appendTo('#product_addtocart_form');
+
+            $('#product_addtocart_form').attr('action', url.build('rent/cart/add')); // Custom rent URL
+            $('#product_addtocart_form').submit();
+        });
+    });
+</script>

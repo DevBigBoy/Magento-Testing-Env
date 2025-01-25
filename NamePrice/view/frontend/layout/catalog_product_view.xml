@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="product.info.addtocart">
+            <block class="Magento\Framework\View\Element\Template" name="name.your.price" template="Shezo_NamePrice::nameyourprice.phtml" />
+            <block class="Magento\Framework\View\Element\Template" name="custom.buy.or.rent" template="Shezo_NameYourPrice::buy_or_rent.phtml" />
+
+        </referenceBlock>
+    </body>
+</page>

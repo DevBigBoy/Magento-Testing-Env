@@ -1,0 +1,17 @@
+<div class="name-your-price-container">
+    <label for="name-your-price">Name Your Price:</label>
+    <input type="number" name="name_your_price" id="name-your-price" step="0.01" min="1" class="name-your-price" />
+</div>
+
+<script type="text/javascript">
+    require(['jquery', 'mage/url'], function ($, url) {
+        $(document).on('submit', '#product_addtocart_form', function () {
+            var price = $('#name-your-price').val();
+            $('<input>').attr({
+                type: 'hidden',
+                name: 'name_your_price',
+                value: price
+            }).appendTo('#product_addtocart_form');
+        });
+    });
+</script>

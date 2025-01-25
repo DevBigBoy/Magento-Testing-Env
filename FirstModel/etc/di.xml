@@ -30,4 +30,8 @@
             </argument>
         </arguments>
     </type>
+
+    <type name="Magento\Catalog\Model\Product">
+        <plugin name="shezo_product_name_plugin" type="Shezo\FirstModel\Plugin\PluginSolution" sortOrder="10" disabled="false"/>
+    </type>
 </config>
