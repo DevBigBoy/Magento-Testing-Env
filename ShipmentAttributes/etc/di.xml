@@ -5,6 +5,6 @@
                 type="Shezo\ShipmentAttributes\Service\Management"/>
     <type name="Magento\Sales\Api\ShipmentRepositoryInterface">
         <plugin name="Shezo\ShipmentAttributes\Plugin\ShipmentRepositoryPlugin"
-                type="Shezo\ShipmentAttributes\Plugin\ShipmentRepositoryPlugin" />
+                type="Shezo\ShipmentAttributes\Plugin\ShipmentRepositoryPlugin" disabled="true"/>
     </type>
 </config>
