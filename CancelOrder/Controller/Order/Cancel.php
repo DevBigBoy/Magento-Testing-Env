@@ -2,11 +2,12 @@
 
 namespace Shezo\CancelOrder\Controller\Order;
 
+use Magento\Framework\App\Action\Action;
 use Magento\Sales\Controller\OrderInterface;
 use Magento\Framework\App\Action\Context;
 use Magento\Sales\Controller\AbstractController\OrderLoaderInterface;
 
-class Cancel extends \Magento\Framework\App\Action\Action implements OrderInterface
+class Cancel extends Action implements OrderInterface
 {
     protected $_resultPageFactory;
     protected $_order;

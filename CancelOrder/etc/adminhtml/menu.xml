@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework/Module/etc/adminhtml/menu.xsd">
+
+    <!-- Parent Menu (Under Sales) -->
+    <menu>
+        <add id="Shezo_CancelOrder::cancel_order"
+             title="Cancel Order"
+             translate="title"
+             module="Shezo_CancelOrder"
+             sortOrder="30"
+             parent="Magento_Sales::sales"
+             resource="Shezo_CancelOrder::cancel_order" />
+
+        <!-- Submenu (Cancel Order Requests) -->
+        <add id="Shezo_CancelOrder::cancel_order_requests"
+             title="Cancel Order Requests"
+             translate="title"
+             module="Shezo_CancelOrder"
+             parent="Shezo_CancelOrder::cancel_order"
+             action="shezo_cancelorder/request/index"
+             resource="Shezo_CancelOrder::cancel_order_requests"
+             sortOrder="50" />
+    </menu>
+</config>
