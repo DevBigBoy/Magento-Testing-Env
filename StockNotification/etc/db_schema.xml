@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework/Setup/Declaration/Schema/etc/db_schema.xsd">
+
+    <table name="shezo_stock_notification" resource="default" engine="innodb" comment="Out of Stock Subscription">
+
+        <!-- Primary Key -->
+        <column name="id" xsi:type="int" unsigned="true" nullable="false" identity="true" comment="Entity ID"/>
+
+        <!-- Email Column -->
+        <column name="email" xsi:type="varchar" length="255" nullable="false" comment="Customer Email"/>
+
+        <!-- Product ID -->
+        <column name="product_id" xsi:type="int" unsigned="true" nullable="true" comment="Product ID"/>
+
+        <!-- Product SKU -->
+        <column name="product_sku" xsi:type="varchar" length="255" nullable="false" comment="Product SKU"/>
+
+        <!-- Store ID -->
+        <column name="store_id" xsi:type="smallint" unsigned="true" nullable="true" comment="Store ID"/>
+
+        <!-- Status Column (0 = Pending, 1 = Sent) -->
+        <column name="status" xsi:type="smallint" nullable="false" default="0" comment="Notification Status"/>
+
+        <!-- Creation Time -->
+        <column name="created_at" xsi:type="timestamp" nullable="false" default="CURRENT_TIMESTAMP" comment="Creation Time"/>
+
+        <!-- Update Time (Handled in model) -->
+        <column name="updated_at" xsi:type="timestamp" nullable="false" default="CURRENT_TIMESTAMP" comment="Updated At"/>
+
+        <!-- Is Active -->
+        <column name="is_active" xsi:type="smallint" nullable="false" default="1" comment="Is Active"/>
+
+        <!-- Define Constraints -->
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="id"/>
+        </constraint>
+
+        <!-- Unique Constraint for Email + Product ID -->
+        <constraint xsi:type="unique" referenceId="SHEZO_STOCK_NOTIFICATION_UNIQUE_EMAIL_PRODUCT">
+            <column name="email"/>
+            <column name="product_id"/>
+        </constraint>
+
+        <!-- Index on Product ID -->
+        <index referenceId="SHEZO_STOCK_NOTIFICATION_PRODUCT_ID" indexType="btree">
+            <column name="product_id"/>
+        </index>
+
+        <!-- Product SKU Index -->
+        <index referenceId="SHEZO_STOCK_NOTIFICATION_PRODUCT_SKU">
+            <column name="product_sku"/>
+        </index>
+
+        <!-- Foreign Key Constraint for Store ID -->
+        <constraint xsi:type="foreign" referenceId="SHEZO_STOCK_NOTIFICATION_STORE_ID_STORE_STORE_ID"
+                    table="shezo_stock_notification" column="store_id"
+                    referenceTable="store" referenceColumn="store_id"
+                    onDelete="SET NULL"/>
+
+        <!-- Foreign Key Constraint for Product ID -->
+        <constraint xsi:type="foreign" referenceId="SHEZO_STOCK_NOTIFICATION_PRODUCT_ID_CATALOG_PRODUCT_ENTITY_ENTITY_ID"
+                    table="shezo_stock_notification" column="product_id"
+                    referenceTable="catalog_product_entity" referenceColumn="entity_id"
+                    onDelete="CASCADE"/>
+
+    </table>
+</schema>

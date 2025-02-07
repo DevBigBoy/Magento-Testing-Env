@@ -1,0 +1,9 @@
+type CancelOrderOutput {
+    success: Boolean!
+    message: String
+}
+
+type Mutation {
+    cancelOrder(order_id: Int!, comment: String): CancelOrderOutput
+    @resolver(class: "Shezo\\CancelOrderGraphQl\\Model\\Resolver\\CancelOrder")
+}

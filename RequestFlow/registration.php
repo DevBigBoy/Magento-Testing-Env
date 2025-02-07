@@ -4,6 +4,6 @@ use Magento\Framework\Component\ComponentRegistrar;
 
 ComponentRegistrar::register(
     ComponentRegistrar::MODULE,
-    'Shezo_CancelOrderGraphql',
+    'Shezo_RequestFlow',
     __DIR__
 );

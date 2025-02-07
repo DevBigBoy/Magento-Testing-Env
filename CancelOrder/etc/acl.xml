@@ -5,7 +5,9 @@
     <acl>
         <resources>
             <resource id="Magento_Backend::admin">
-                <resource id="Magento_Sales::sales">
+
+                <!-- Sales Permissions -->
+                <resource id="Magento_Sales::sales" title="Sales">
 
                     <!-- Parent ACL for Cancel Order -->
                     <resource id="Shezo_CancelOrder::cancel_order" title="Cancel Order" translate="title" sortOrder="30">
@@ -16,6 +18,8 @@
                     </resource>
 
                 </resource>
+
+
             </resource>
         </resources>
     </acl>

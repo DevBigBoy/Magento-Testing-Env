@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework/Config/etc/system_file.xsd">
+
+    <system>
+        <!-- Add New Custom Tab -->
+        <tab id="shezo" translate="label" sortOrder="999">
+            <label>Shezo</label>
+        </tab>
+
+        <!-- Create a New Section -->
+        <section id="cancel_order" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Cancel Order Settings</label>
+            <tab>shezo</tab>
+            <resource>Shezo_CancelOrder::config</resource>
+
+            <!-- Create a Group Inside the Section -->
+            <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>General Settings</label>
+
+                <!-- Create a Field Inside the Group -->
+                <field id="enable" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable Cancel Order</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+
+            </group>
+        </section>
+
+    </system>
+</config>

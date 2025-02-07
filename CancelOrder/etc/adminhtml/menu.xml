@@ -18,7 +18,7 @@
              translate="title"
              module="Shezo_CancelOrder"
              parent="Shezo_CancelOrder::cancel_order"
-             action="shezo_cancelorder/request/index"
+             action="cancelorder/cancelorder/index"
              resource="Shezo_CancelOrder::cancel_order_requests"
              sortOrder="50" />
     </menu>
