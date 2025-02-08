@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Crontab/etc/crontab.xsd">
+
+    <group id="default">
+        <job name="shezo_send_affiliate_email" instance="Shezo\DataBase\Cron\SendAffiliateEmail" method="execute">
+            <schedule>0 0 * * *</schedule>
+        </job>
+    </group>
+</config>
