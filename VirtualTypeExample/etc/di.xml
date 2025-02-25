@@ -5,11 +5,11 @@
 
     <type name="Shezo\VirtualTypeExample\ViewModel\Example">
         <arguments>
-            <argument name="warehouseRepository" xsi:type="object">WarehouseRepositoryExtended</argument>
+            <argument name="warehouseRepository" xsi:type="object">WarehouseManagementExtend</argument>
         </arguments>
     </type>
 
-    <virtualType name="WarehouseRepositoryExtended" type="Shezo\VirtualTypeExample\Model\WarehouseRepository">
+    <virtualType name="WarehouseManagementExtend" type="Shezo\VirtualTypeExample\Model\WarehouseRepository">
         <arguments>
             <argument name="warehouseManagement" xsi:type="object">Shezo\VirtualTypeExample\Model\WarehouseManagementExtend</argument>
         </arguments>
