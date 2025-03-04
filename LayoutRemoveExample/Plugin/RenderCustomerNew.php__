@@ -1,0 +1,24 @@
+<?php
+
+namespace Shezo\LayoutRemoveExample\Plugin;
+
+
+use Magento\Framework\App\RequestInterface;
+
+class RenderCustomerNew
+{
+    private RequestInterface $request;
+
+    public function __construct(
+        RequestInterface $request
+    )
+    {
+        $this->request = $request;
+    }
+
+
+    public function afterGetAttribute(\Magento\Framework\Data\Structure $subject)
+    {
+
+    }
+}
